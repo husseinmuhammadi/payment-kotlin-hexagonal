@@ -28,7 +28,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <generatorName>spring</generatorName>
+                            <generatorName>kotlin-spring</generatorName>
                             <library>spring-boot</library>
                             <inputSpec>
                                 ${project.basedir}/src/main/resources/open-api/server/card-transaction.yaml
@@ -47,6 +47,11 @@
                                 <useBeanValidation>true</useBeanValidation>
                                 <dateLibrary>java8</dateLibrary>
                                 <serializableModel>true</serializableModel>
+
+<!--                                <annotationLibrary>none</annotationLibrary>-->
+                                <documentationProvider>none</documentationProvider>
+<!--                                <serializationLibrary>jackson</serializationLibrary>-->
+<!--                                <packageName>${openapi-generator.root.package}</packageName>-->
                             </configOptions>
 
                             <typeMappings>
@@ -71,6 +76,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
+        <!-- Open API Generator -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openapitools</groupId>
+            <artifactId>jackson-databind-nullable</artifactId>
         </dependency>
 
         <dependency>
